@@ -8,4 +8,12 @@ commands:
   태그:
     usage: /태그 [내용...]
     description: 태그 추가 명령어
-    permission: op
+    permission: solofloattag.command.tag
+
+permissions:
+  solofloattag:
+    children:
+      solofloattag.command:
+        children:
+          solofloattag.command.tag:
+            default: op

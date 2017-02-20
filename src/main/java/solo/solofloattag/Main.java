@@ -3,6 +3,7 @@ package solo.solofloattag;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import cn.nukkit.Player;
@@ -154,12 +155,12 @@ public class Main extends PluginBase implements Listener{
 					return true;
 					
 				default:
-					ArrayList<String> help = new ArrayList<String>();
-					help.add("/태그 추가 [내용...] - 태그를 추가합니다.");
-					help.add("/태그 삭제 - 태그를 삭제합니다.");
-					help.add("/태그 중지 - 진행중이던 태그 작업을 중지합니다.");
-					help.add("/태그 목록 - 태그 목록을 봅니다.");
-					Message.page(sender, "태그 명령어 목록", help);
+					LinkedHashMap<String, String> help = new LinkedHashMap<>();
+					help.put("/태그 추가 [내용...]", "태그를 추가합니다.");
+					help.put("/태그 삭제", "태그를 삭제합니다.");
+					help.put("/태그 중지", "진행중이던 태그 작업을 중지합니다.");
+					help.put("/태그 목록", "태그 목록을 봅니다.");
+					Message.commandHelp(sender, "태그 명령어 목록", help);
 					return true;
 			}
 		}
